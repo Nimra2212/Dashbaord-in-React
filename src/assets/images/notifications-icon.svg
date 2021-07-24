@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="34.9" viewBox="0 0 30 34.9">
+  <g id="Group_49" data-name="Group 49" transform="translate(-1589 -31)">
+    <g id="Group_22" data-name="Group 22" transform="translate(59 -19)">
+      <g id="notification_3_" data-name="notification (3)" transform="translate(1530 57.704)">
+        <g id="Group_21" data-name="Group 21" transform="translate(0)">
+          <path id="Path_24" data-name="Path 24" d="M46.759,19.779H45.523V9.889a9.889,9.889,0,0,0-19.779,0v9.889H24.508a1.236,1.236,0,0,0,0,2.472h6.181a4.945,4.945,0,0,0,9.889,0h6.181a1.236,1.236,0,1,0,0-2.472ZM35.634,24.723a2.475,2.475,0,0,1-2.472-2.472h4.945A2.475,2.475,0,0,1,35.634,24.723Zm7.417-4.945H28.217V9.889a7.417,7.417,0,0,1,14.834,0Z" transform="translate(-23.272 0)" fill="#e6eef5"/>
+        </g>
+      </g>
+      <rect id="Rectangle_7" data-name="Rectangle 7" width="5" height="7" rx="2.5" transform="translate(1540 53)" fill="#e6eef5"/>
+    </g>
+    <g id="Ellipse_3" data-name="Ellipse 3" transform="translate(1605 31)" fill="#f6516f" stroke="#0e163a" stroke-width="2">
+      <circle cx="7" cy="7" r="7" stroke="none"/>
+      <circle cx="7" cy="7" r="6" fill="none"/>
+    </g>
+  </g>
+</svg>

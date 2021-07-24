@@ -1,0 +1,946 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+
+@mixin fonts {
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: bolder;
+}
+@mixin dropdownBasic {
+    background-color: transparent !important;
+    outline: none !important;
+    border: none;
+}
+// Dark-mode scss
+
+.dark-mode {
+    .mainHeader {
+        background-color: #021239 !important;
+        .dropDownDiv {
+            color: white;
+            .notifications {
+                background-color: #0c2052 !important;
+                border: 1px solid #243460 !important;
+                .notificationsHeading {
+                    color: white !important;
+                }
+                .msg {
+                    background-color: #021239 !important;
+                    border-top: 1px solid rgb(113, 112, 112) !important;
+                    color: white !important;
+                    &:hover {
+                        background-color: #253660 !important;
+                    }
+                    span {
+                        p {
+                            color: white !important;
+                        }
+                        .msgP {
+                            color: rgb(175, 175, 175) !important;
+                        }
+                    }
+                }
+            }
+            .userDropdown {
+                color: white !important;
+                font-size: 12px !important;
+                .userImage{
+                    border: 1px solid rgb(159, 159, 159);
+                }
+            }
+            .userDropdownDiv {
+                background-color: #0c2052 !important;
+                border: 2px solid #243460 !important;
+                .dropDownTextColor {
+                    color: white !important;
+                    &:hover {
+                        background-color: #253660 !important;
+                    }
+                }
+                .redicon {
+                    border-top: 1px solid #253660 !important;
+                    color: red !important;
+                    &:hover {
+                        background-color: #253660 !important;
+                    }
+                }
+            }
+        }
+    }
+    .header2 {
+        background-color: #091a49;
+        .headerLeftDiv {
+            color: white !important;
+        }
+        .headerRightDiv {
+            .dropdownButtons {
+                background-color: #0c2052 !important;
+                border: 2px solid #243460 !important;
+                .dropDownTextColor{
+                    color: white !important;
+                    &:hover{
+                        background-color: #1c3269 !important;
+                    }
+                }
+            }
+            Button {
+                color: #e6eef5;
+            }
+            .btnleft {
+                background-color: #6599ff !important;
+            }
+            .btnright {
+                background-color: #6b30f4 !important;
+            }
+            
+        }
+    }
+    .popup-box {
+        background: #000000ad;
+        .box {
+            .card {
+                background-color: #182445 !important;
+                color: white !important;
+                .card-header {
+                    p {
+                        color: white !important;
+                    }
+                }
+                .react-tabs {
+                    .react-tabs__tab-panel--selected {
+                        background-color: #051232 !important;
+                    }
+                    ul {
+                        background-color: #091a49 !important;
+                        color: white !important;
+                    }
+                    .react-tabs__tab--selected {
+                        background: rgba(255, 255, 255, 0) !important;
+                        border-color: rgba(170, 170, 170, 0) !important;
+                        color: rgb(255, 255, 255);
+                        border-bottom: 2px solid #253660 !important;
+                    }
+                }
+            }
+            .addLanguage {
+                background-color: #6b30f4 !important;
+                color: white !important;
+            }
+            .card-footer {
+                Button {
+                    color: white !important;
+                }
+                .createButton {
+                    background-color: #6599ff !important;
+                }
+                .cancelButton {
+                    background-color: #6b30f400 !important;
+                    border: 1px solid white !important;
+                }
+            }
+        }
+    }
+    .dashboard {
+        background-color: #021239 !important;
+        .cards {
+            background-color: #021239 !important;
+            border: 1px solid rgb(133, 133, 133);
+            .cardTop {
+                .dotmenu {
+                    .dropdownDots {
+                        .dropdownButtons {
+                            background-color: #0c2052 !important;
+                            border: 2px solid #243460 !important;
+                            .dropDownTextColor {
+                                color: white !important;
+                                &:hover {
+                                    background-color: #253660 !important;
+                                }
+                            }
+                        }
+                        
+                    }
+                }
+            }
+            .cardInnerTop {
+                p {
+                    color: white !important;
+                }
+            }
+            .cardInnerBottom {
+                p {
+                    color: white !important;
+                }
+                .userImage{
+                    border: 1px solid rgb(159, 159, 159);
+                    height: 28px !important;
+                }
+            }
+            .cardBottom {
+                background-color: #253660;
+            }
+        }
+        .cards:hover {
+            cursor: pointer;
+            background-color: #071a49 !important;
+        }
+    }
+    .languageDropdown {
+        .dropdown-menu {
+            // border: 2px solid #243460 !important;
+            .dropdown-item {
+                color: black !important;
+                // &:hover {
+                //     background-color: #253660 !important;
+                // }
+            }
+        }
+        button {
+           
+            border: 1px solid white !important;
+           
+            background-color: #021239 !important;
+           
+            color: white !important;
+         
+        }
+    }
+    
+    // dropdown fields scss
+    
+    .form-group {
+       
+        color: white;
+       
+        .form-control {
+           
+            background-color: #020d29 !important;
+           
+            color: white !important;
+           
+            &:focus {
+                color: #ffffff;
+                border: 1px solid white !important;
+            }
+        }
+        ul {
+            li {
+                background-color: #091a49 !important;
+            }
+        }
+    }
+    
+    
+    label {
+       
+        color: white !important;
+       
+    }
+    .searchBox {
+       
+        color: white !important;
+    }
+    .chip {
+        background-color: #091a49 !important;
+    }
+    a {
+        
+        color: white !important;
+    }
+    
+}
+
+.light-mode {
+    .mainHeader {
+        background-color: white !important;
+        .dropDownDiv {
+            color: black;
+            .notifications {
+                background-color: white !important;
+                border: 1px solid #c6c6c6 !important;
+                .notificationsHeading {
+                    color: black !important;
+                }
+                .msg {
+                    background-color: #ffffff !important;
+                    border-top: 1px solid #c6c6c6 !important;
+                    color: black !important;
+                    &:hover {
+                        background-color: #d7d7d7 !important;
+                    }
+                    span {
+                        p {
+                            color: black !important;
+                            font-weight: bolder !important;
+                        }
+                        .msgP {
+                            color: rgb(121, 121, 121) !important;
+                        }
+                    }
+                }
+                .showAll {
+                    font-weight: bolder !important;
+                }
+            }
+            .userDropdown {
+                color: black !important;
+                font-size: 12px !important;
+                .userImage{
+                    border: 1px solid rgb(133, 133, 133);
+                }
+            }
+            .userDropdownDiv {
+                background-color: #ffffff !important;
+                border: 1px solid #c6c6c6 !important;
+                .dropDownTextColor {
+                    color: black !important;
+                    &:hover {
+                        background-color: #c2c2c2 !important;
+                    }
+                }
+                .redicon {
+                    border-top: 1px solid #cfcfd0 !important;
+                    color: red !important;
+                    &:hover {
+                        background-color: #c2c2c2 !important;
+                    }
+                }
+            }
+        }
+    }
+    .header2 {
+        background-color: #f4f4f4;
+        .headerLeftDiv {
+            color: black !important;
+        }
+        .headerRightDiv {
+            .dropdownButtons {
+                background-color: #ffffff !important;
+                border: 1px solid #d8d8d8 !important;
+                .dropDownTextColor{
+                    color: black !important;
+                    &:hover{
+                        background-color: #ebebeb !important;
+                    }
+                }
+            }
+            Button {
+                color: black;
+            }
+            .btnleft {
+                background-color: #6599ff !important;
+            }
+            .btnright {
+                background-color: #6b30f4 !important;
+            }
+        }
+    }
+    .popup-box {
+        background: #000000ad;
+        .box {
+            .card {
+                background-color: rgb(179, 191, 215) !important;
+                color: black !important;
+                .card-header {
+
+                    p {
+                        color: black !important;
+                    }
+                }
+                .react-tabs {
+                    .react-tabs__tab-panel--selected {
+                        background-color: #ffffff !important;
+                    }
+                    ul {
+                        background-color: #f4f4f4 !important;
+                        color: black !important;
+                    }
+                    .react-tabs__tab--selected {
+                        background: rgba(255, 255, 255, 0) !important;
+                        border-color: rgba(170, 170, 170, 0) !important;
+                        color: black;
+                        border-bottom: 2px solid #cbcbcb !important;
+                    }
+                }
+            }
+            .addLanguage {
+                background-color: #6b30f4 !important;
+                color: white !important;
+            }
+            .card-footer {
+                Button {
+                    color: black !important;
+                }
+                .createButton {
+                    background-color: #6599ff !important;
+                }
+                .cancelButton {
+                    background-color: #6b30f400 !important;
+                    border: 1px solid black !important;
+                }
+            }
+        }
+    }
+    .dashboard {
+        background-color: #ffffff !important;
+        .cards {
+            background-color: rgb(240, 241, 245) !important;
+            border: 1px solid rgb(133, 133, 133);
+            .cardTop {
+                .dotmenu {
+                    .dropdownDots {
+                        h5{
+                            color: black !important;
+                        }
+                        .dropdownButtons {
+                            background-color: #ffffff !important;
+                            border: 2px solid #d3d3d3 !important;
+                            .dropDownTextColor {
+                                color: black !important;
+                                &:hover {
+                                    background-color: #e9e9e9 !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .cardInnerTop {
+                p {
+                    color: black !important;
+                }
+            }
+            .cardInnerBottom {
+                .userImage{
+                    border: 1px solid rgb(159, 159, 159);
+                    height: 28px !important;
+                }
+                p {
+                    color: black !important;
+                }
+            }
+            .cardBottom {
+                background-color: rgba(153, 170, 202, 0.36);
+            }
+        }
+        .cards:hover {
+            cursor: pointer;
+            background-color: #e7eaf0 !important;
+        }
+    }
+
+    .languageDropdown {
+        .dropdown-menu {
+            // border: 2px solid #243460 !important;
+            .dropdown-item {
+                color: black !important;
+                // &:hover {
+                //     background-color: #253660 !important;
+                // }
+            }
+        }
+        button {
+           
+            border: 1px solid rgb(216, 215, 215) !important;
+           
+            background-color: #ffffff !important;
+           
+            color: black !important;
+         
+        }
+    }
+    
+    // dropdown fields scss
+    
+    .form-group {
+       
+        color: black;
+       
+        .form-control {
+           
+            background-color: #ffffff !important;
+           
+            color: black !important;
+           
+            &:focus {
+                color: black;
+                border: 1px solid rgb(221, 221, 221) !important;
+            }
+        }
+        ul {
+            li {
+                background-color: #ffffff !important;
+                color: black !important;
+                &:hover{
+                    color: black !important;
+                }
+            }
+        }
+    }
+    
+    
+    label {
+       
+        color: black !important;
+       
+    }
+    .searchBox {
+       
+        color: black !important;
+    }
+    .chip {
+        background-color: #d7d7d7 !important;
+        color: black !important;
+    }
+    a {
+        
+        color: black !important;
+    }
+}
+
+
+
+
+//  all components scss
+
+.mainDiv {
+    .mainHeader {
+        height: 80px;
+        display: flex;
+        width: 100%;
+        z-index: -1 !important;
+        .logoDiv {
+            padding: 15px;
+            width: 50%;
+        }
+        .dropDownDiv {
+            text-align: end;
+            width: 50%;
+            padding: 18px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            #dropdown-basic {
+               @include dropdownBasic;
+                .notificationIcon {
+                    height: 25px;
+                    margin-right: 10px;
+                }
+            }
+            .dropdownIcon {
+                width: 40px !important;
+            }
+            .dropdownIcon::after {
+                display: none !important;
+                width: 40px !important;
+            }
+            .notifications {
+                margin-left: -140px !important;
+                min-width: 230px !important;
+                padding-bottom: 0 !important;
+                .notificationsHeading {
+                    padding: 0px 0 10px 0;
+                    text-align: center !important;
+                    text-transform: uppercase;
+                    font-size: 14px;
+                    @include fonts;
+                    margin: 8px 0 0px 0 !important;
+                }
+                .msg {
+                    display: flex !important;
+                    padding: 8px 0 8px 10px !important;
+                    .msgicon {
+                        margin-top: 5px;
+                        font-size: 18px !important;
+                    }
+
+                    span {
+                        margin-left: 10px !important;
+                        p {
+                            margin: 0 !important;
+                        }
+                        .msgP {
+                            margin: 0 !important;
+                        }
+                    }
+                }
+                .showAll {
+                    padding: 10px 0 10px 0 !important;
+                    margin: 0 0 0 70px !important;
+                }
+            }
+
+            .userDropdown {
+                border: none !important;
+                @include fonts;
+                font-size: 12px !important;
+                &::after {
+                    margin-left: 15px !important;
+                }
+                .userImage {
+                    height: 32px;
+                    border-radius: 50px;
+                    margin-right: 10px;
+                }
+            }
+            .userDropdownDiv {
+                min-width: 130px !important;
+                margin-left: 60px !important;
+                .dropDownTextColor {
+                    .icon {
+                        margin-right: 10px;
+                    }
+                }
+                .redicon {
+                    margin-top: 5px !important;
+                    padding-top: 10px !important;
+                    .icon {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .header2 {
+        width: 100%;
+        display: flex;
+        width: 100%;
+        .headerLeftDiv {
+            width: 50%;
+            font-size: 12px;
+            @include fonts;
+            padding: 15px;
+            p {
+                margin: 0 !important;
+                font-size: 14px;
+                .categoryIcon {
+                    height: 18px;
+                    margin-right: 5px;
+                }
+            }
+        }
+        .headerRightDiv {
+            width: 50%;
+            text-align: end;
+            justify-content: flex-end !important;
+            display: flex !important;
+            Button {
+                outline: none !important;
+                border: none !important;
+                border-radius: 100px !important;
+                @include fonts;
+                margin-left: 15px;
+                text-transform: uppercase;
+                font-size: 12px !important;
+                margin: 10px !important;
+                .btnIcon {
+                    margin-right: 10px;
+                }
+            }
+            .btnleft {
+                width: 230px;
+            }
+            .dropdownDots{
+                width: 150px !important;
+                .btnright {
+                    width: 130px;
+                }
+                .dropdown-toggle::after {
+                    display: none !important;
+                }
+               
+            }
+            
+        }
+    }
+    .popup-box {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        .box {
+            max-width: 60%;
+            min-width: 400px;
+            margin: 0 auto;
+            height: auto;
+            margin-top: 50px;
+            border-radius: 4px;
+            padding: 20px;
+            overflow: auto;
+            .card {
+                .card-header {
+                    padding: 20px !important;
+                    display: flex;
+                    .icon {
+                        margin-right: 5px;
+                        font-size: 18px;
+                    }
+                    p {
+                        @include fonts;
+                        font-size: 13px;
+                        padding-left: 10px;
+                        margin: 0 !important;
+                    }
+                }
+                .tabIcon {
+                    margin-right: 10px;
+                    font-size: 16px !important;
+                }
+                .form {
+                    width: 100% !important;
+                    display: flex !important;
+                    align-items: center !important;
+                    .languageDiv {
+                        width: 25% !important;
+                    }
+                }
+
+                .react-tabs {
+                    h2 {
+                        margin: 0 !important;
+                    }
+                    .react-tabs__tab-list {
+                        border-bottom: 0 !important;
+                        margin: 0 !important;
+                    }
+                    .react-tabs__tab-panel--selected {
+                        display: block;
+                        padding: 20px 20px 20px 20px !important;
+                    }
+                    ul {
+                        padding: 10px 10px 1px 20px !important;
+                        @include fonts;
+                        font-size: 13px;
+                    }
+                    .react-tabs__tab--selected {
+                        border-radius: 0 !important;
+                        outline: none !important;
+                        box-shadow: none !important;
+                    }
+                }
+            }
+
+            .addLanguage {
+                width: 180px;
+                height: 30px;
+                border-radius: 200px !important;
+                outline: none !important;
+                margin: 20px 0px 0px 0px !important;
+                line-height: 1px;
+                border: none !important;
+                @include fonts;
+                font-size: 12px !important;
+                .icon {
+                    margin-right: 10px;
+                }
+            }
+            .card-footer {
+                text-align: right;
+                Button {
+                    width: 120px;
+                    height: 35px;
+                    border-radius: 200px !important;
+                    outline: none !important;
+                    margin: 10px 15px 10px 0px !important;
+                    line-height: 1px;
+                    @include fonts;
+                    font-size: 12px !important;
+                }
+                .createButton {
+                    border: none !important;
+                    .icon {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .dashboard {
+        height: 100vh !important;
+        padding: 30px;
+        .cards {
+            height: 210px;
+            width: 250px !important;
+            border-radius: 20px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            .cardTop {
+                background-color: transparent !important;
+                .dotmenu {
+                    text-align: end !important;
+                    .dropdownDots {
+                        .dotsDropdown {
+                            width: 40px !important;
+                            &::after {
+                                display: none !important;
+                                width: 40px !important;
+                            }
+                        }
+                        .dropdownButtons {
+                            min-width: 130px !important;
+                            .dropDownTextColor {
+                                .icon {
+                                    margin-right: 10px;
+                                    font-size: 16px !important;
+                                }
+                            }
+                        }
+                        #dropdown-basic {
+                           @include dropdownBasic;
+                        }
+                    }
+                }
+                .dropdownDiv {
+                    visibility: hidden;
+                    padding-top: 0px !important;
+                    margin-top: -4px !important;
+                    text-align: end !important;
+                    h2 {
+                        padding: 0 !important;
+                        margin: -8px 5px 0 0 !important;
+                    }
+                }
+            }
+
+            .cardInnerTop {
+                text-align: center;
+                margin-top: -16px !important;
+                p {
+                    font-size: 14px;
+                    @include fonts;
+                    padding: 15px 15px 8px 15px;
+                    margin: 0 !important;
+                }
+            }
+            .cardInnerBottom {
+                align-items: center;
+                justify-content: center;
+                display: flex;
+                padding-bottom: 35px;
+                .userImage {
+                    height: 32px;
+                    border-radius: 50px;
+                    margin-right: 10px;
+                }
+                p {
+                    @include fonts;
+                    font-size: 12px;
+                    margin: 0 !important;
+                }
+            }
+            .cardBottom {
+                height: 80px;
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+                margin-top: -18px;
+                text-align: center;
+                img {
+                    width: 42%;
+                    margin: 10px 5px 5px 5px;
+                }
+            }
+        }
+        .cards:hover {
+            cursor: pointer;
+
+            .dropdownDiv {
+                visibility: visible;
+            }
+        }
+    }
+}
+
+// Language dropdown scss
+
+.labelLanguage {
+    margin-left: 10px !important;
+}
+.languageDropdown {
+    margin-bottom: 10px !important;
+    .dropdown-menu {
+        min-width: 115px !important;
+        margin-top: -25px !important;
+        margin-left: -10px !important;
+        border-radius: 10px !important;
+        padding: 10px 10px 10px 10px;
+        .dropdown-item {
+            @include fonts;
+        }
+    }
+    button {
+        margin: 0px 20px 0px 10px;
+        width: 120px !important;
+        text-align: left !important;
+        @include fonts;
+        font-size: 12px !important;
+    }
+}
+
+// dropdown fields scss
+
+.form-group {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    background-color: transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
+    .form-control {
+        box-shadow: none !important;
+        width: 100% !important;
+        outline: none !important;
+        height: 33px !important;
+        @include fonts;
+        font-size: 12px !important;
+        outline: none !important;
+    }
+    ul {
+        list-style-type: none !important;
+    }
+}
+.group1 {
+    margin-top: 20px !important;
+}
+.field {
+    width: 75% !important;
+}
+.fieldTwo {
+    width: 65% !important;
+}
+.deleteIcon {
+    margin: 20px 0px 0px 20px !important;
+    cursor: pointer;
+}
+
+// end
+
+.btn-check:focus + .btn-primary,
+.btn-primary:focus {
+    box-shadow: none !important;
+}
+
+/* Popup and dropdown style */
+
+.dropdown-toggle::after {
+    margin-left: 30px !important;
+}
+label {
+    padding: 0 0 10px 0;
+    @include fonts;
+    font-size: 12px !important;
+}
+.searchBox {
+    @include fonts;
+    font-size: 12px !important;
+}
+
+.close-icon {
+    display: none !important;
+}
+a {
+    @include fonts;
+    font-size: 12px !important;
+}
+.dropdownManu {
+    min-width: 120px !important;
+}
