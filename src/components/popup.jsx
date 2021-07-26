@@ -103,7 +103,7 @@ const Popup = (props) => {
                             placeholder="Enter Name"
                           ></input>
                         </div>
-                      {form.length>=1 ?  <DeleteForeverIcon onClick={() => decrement(data, ind)} className="deleteIcon" ></DeleteForeverIcon> : ""} 
+                      {form.length>1 ?  <DeleteForeverIcon onClick={() => decrement(data, ind)} className="deleteIcon" ></DeleteForeverIcon> : ""} 
                       </form>
                     );
                   })}
