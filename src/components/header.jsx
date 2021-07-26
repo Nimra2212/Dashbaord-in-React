@@ -22,13 +22,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [dashData, setDashData] = useState([1, 2, 3, 4, 5, 6, 7, 8]);
   const [dark, setMode] = useState(true);
-  const [inputField, setinputField] = useState([]);
-
-  const inputValue = (e, id) => {
-    let addVal = [...inputField];
-    addVal[id] = e
-    setinputField(addVal);
-  };
+ 
   const togglePopup = () => {
     setIsOpen(!isOpen);
   };
@@ -42,7 +36,6 @@ const Header = () => {
   const addCard = () => {
     setDashData([...dashData, 1]);
     setIsOpen(!isOpen);
-    setinputField("");
   };
   return (
     <div className={dark ? "mainDiv dark-mode" : "mainDiv light-mode"}>
@@ -141,8 +134,6 @@ const Header = () => {
         check={isOpen}
         togglePopup={togglePopup}
         addCard={addCard}
-        inputField={inputField}
-        inputValue={inputValue}
       />
       <div className="dashboard d-flex align-content-start flex-wrap">
         {dashData.map((data, ind) => {

@@ -15,7 +15,13 @@ import AddBoxIcon from "@material-ui/icons/AddBox";
 const Popup = (props) => {
   const [value, setValue] = useState("");
   const [form, setForm] = useState([""]);
+  const [inputField, setinputField] = useState([]);
 
+  const inputValue = (e, id) => {
+    let addVal = [...inputField];
+    addVal[id] = e.target.value
+    setinputField(addVal);
+  };
   const handleSelect = (e, id) => {
     let selectVal = [...value];
     selectVal[id] = e
@@ -34,6 +40,10 @@ const Popup = (props) => {
         return newData.id !== form[ind].id;
       });
     });
+    value.splice(ind, 1)
+    setValue(value)
+    inputField.splice(ind, 1)
+    setinputField(inputField)
   };
 
   return (
@@ -86,13 +96,14 @@ const Popup = (props) => {
                         <div className="fieldTwo form-group">
                           <label>Catogery Name</label>
                           <input
-                          onChange={e => props.inputValue(e, ind)}
+                          onChange={e => inputValue(e, ind)}
                             type="input"
+                            value={inputField[ind] || ""}
                             className="form-control"
                             placeholder="Enter Name"
                           ></input>
                         </div>
-                      {form.length>1 ?  <DeleteForeverIcon onClick={() => decrement(data, ind)} className="deleteIcon" ></DeleteForeverIcon> : ""} 
+                      {form.length>=1 ?  <DeleteForeverIcon onClick={() => decrement(data, ind)} className="deleteIcon" ></DeleteForeverIcon> : ""} 
                       </form>
                     );
                   })}
