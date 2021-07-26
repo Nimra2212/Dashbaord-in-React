@@ -22,10 +22,12 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [dashData, setDashData] = useState([1, 2, 3, 4, 5, 6, 7, 8]);
   const [dark, setMode] = useState(true);
-  const [inputField, setinputField] = useState("");
+  const [inputField, setinputField] = useState([]);
 
-  const inputValue = (e) => {
-    setinputField(e);
+  const inputValue = (e, id) => {
+    let addVal = [...inputField];
+    addVal[id] = e
+    setinputField(addVal);
   };
   const togglePopup = () => {
     setIsOpen(!isOpen);

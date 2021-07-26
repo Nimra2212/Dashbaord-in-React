@@ -14,10 +14,12 @@ import AddBoxIcon from "@material-ui/icons/AddBox";
 
 const Popup = (props) => {
   const [value, setValue] = useState("");
-  const [form, setForm] = useState([]);
+  const [form, setForm] = useState([""]);
 
-  const handleSelect = (e) => {
-    setValue(e);
+  const handleSelect = (e, id) => {
+    let selectVal = [...value];
+    selectVal[id] = e
+    setValue(selectVal);
   };
 
   const increment = () => {
@@ -55,31 +57,6 @@ const Popup = (props) => {
                   </Tab>
                 </TabList>
                 <TabPanel>
-                  <form className="d-flex align-content-start flex-wrap align-items-center">
-                    <div className="languageDiv">
-                      <label className="labelLanguage">Language</label>
-                      <DropdownButton
-                        className="languageDropdown"
-                        title={value || "English"}
-                        onSelect={handleSelect}
-                      >
-                        <Dropdown.Item eventKey=" English">
-                          English
-                        </Dropdown.Item>
-                        <Dropdown.Item eventKey="Arabic">Arabic</Dropdown.Item>
-                        <Dropdown.Item eventKey="French">French</Dropdown.Item>
-                      </DropdownButton>
-                    </div>
-                    <div className="field form-group">
-                      <label>Catogery Name</label>
-                      <input
-                        onChange={props.inputValue}
-                        type="input"
-                        className="form-control"
-                        placeholder="Enter Name"
-                      ></input>
-                    </div>
-                  </form>
                   {form.map((data, ind) => {
                     return (
                       <form
@@ -92,10 +69,10 @@ const Popup = (props) => {
                           </label>
                           <DropdownButton
                             className="languageDropdown"
-                            title={value || "English"}
-                            onSelect={handleSelect}
+                            title={value[ind] || "English"}
+                            onSelect={e => handleSelect(e, ind)}
                           >
-                            <Dropdown.Item eventKey=" English">
+                            <Dropdown.Item eventKey="English">
                               English
                             </Dropdown.Item>
                             <Dropdown.Item eventKey="Arabic">
@@ -109,15 +86,13 @@ const Popup = (props) => {
                         <div className="fieldTwo form-group">
                           <label>Catogery Name</label>
                           <input
+                          onChange={e => props.inputValue(e, ind)}
                             type="input"
                             className="form-control"
                             placeholder="Enter Name"
                           ></input>
                         </div>
-                        <DeleteForeverIcon
-                          onClick={() => decrement(data, ind)}
-                          className="deleteIcon"
-                        ></DeleteForeverIcon>
+                      {form.length>1 ?  <DeleteForeverIcon onClick={() => decrement(data, ind)} className="deleteIcon" ></DeleteForeverIcon> : ""} 
                       </form>
                     );
                   })}
