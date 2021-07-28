@@ -8,7 +8,6 @@ import option from "../assets/images/left-align.svg";
 import plus from "../assets/images/add-icon.svg";
 import noti from "../assets/images/notifications-icon.svg";
 import notiLight from "../assets/images/notifications-icon -light.svg";
-import { useState } from "react";
 import Popup from "./popup";
 import Dashboard from "./dashboard";
 import PersonIcon from "@material-ui/icons/Person";
@@ -17,37 +16,36 @@ import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import Switch from "@material-ui/core/Switch";
+import store from "./DashboardStore/dataStore";
+import { observer } from "mobx-react";
 
-const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [dashData, setDashData] = useState([1, 2, 3, 4, 5, 6, 7, 8]);
-  const [dark, setMode] = useState(true);
- 
+const Header = observer(() => {
+  
+  const { toggle, dashboardData, darkMode, setToggle, setDashboardData, setDarkMode } = store;
+
   const togglePopup = () => {
-    setIsOpen(!isOpen);
+    setToggle(!toggle);
+    
   };
   const removeCard = (id) => {
-    setDashData((oldData) => {
-      return oldData.filter((newData) => {
-        return newData !== dashData[id];
-      });
-    });
+    dashboardData.splice(id, 1)
+    setDashboardData(dashboardData)
   };
   const addCard = () => {
-    setDashData([...dashData, 1]);
-    setIsOpen(!isOpen);
+    setDashboardData([...dashboardData, 1]);
+    setToggle(!toggle);
   };
   return (
-    <div className={dark ? "mainDiv dark-mode" : "mainDiv light-mode"}>
+    <div className={darkMode ? "mainDiv dark-mode" : "mainDiv light-mode"}>
       <div className="mainHeader">
         <div className="logoDiv">
-          {dark ? <img src={logo} alt="" /> : <img src={logoLight} alt="" />}
+          {darkMode ? <img src={logo} alt="" /> : <img src={logoLight} alt="" />}
         </div>
         <div className="dropDownDiv">
           <div>
             <Dropdown>
               <Dropdown.Toggle className="dropdownIcon" id="dropdown-basic">
-                {dark ? (
+                {darkMode ? (
                   <img className="notificationIcon" src={noti} alt="" />
                 ) : (
                   <img className="notificationIcon" src={notiLight} alt="" />
@@ -121,8 +119,8 @@ const Header = () => {
               <Dropdown.Item className="dropDownTextColor">
                 Light Mode
                 <Switch
-                  checked={dark ? false : true}
-                  onClick={() => setMode(!dark)}
+                  checked={darkMode ? false : true}
+                  onClick={() => setDarkMode(!darkMode)}
                   color="primary"
                 />
               </Dropdown.Item>
@@ -130,18 +128,14 @@ const Header = () => {
           </Dropdown>
         </div>
       </div>
-      <Popup
-        check={isOpen}
-        togglePopup={togglePopup}
-        addCard={addCard}
-      />
+      <Popup check={toggle} togglePopup={togglePopup} addCard={addCard} />
       <div className="dashboard d-flex align-content-start flex-wrap">
-        {dashData.map((data, ind) => {
+        {dashboardData.map((data, ind) => {
           return (
             <Dashboard
               key={ind}
               ind={ind}
-              deleteDash={() => removeCard(ind)}
+             deleteDash={() => removeCard(ind)}
               checkPopup={togglePopup}
             />
           );
@@ -149,6 +143,6 @@ const Header = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Header;

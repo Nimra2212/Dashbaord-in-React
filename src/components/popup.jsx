@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import Dropdown from "react-bootstrap/Dropdown";
@@ -11,39 +11,43 @@ import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import PaymentIcon from "@material-ui/icons/Payment";
 import SecurityIcon from "@material-ui/icons/Security";
 import AddBoxIcon from "@material-ui/icons/AddBox";
+import store from "./DashboardStore/dataStore";
+import { observer } from "mobx-react";
 
-const Popup = (props) => {
-  const [value, setValue] = useState("");
-  const [form, setForm] = useState([""]);
-  const [inputField, setinputField] = useState([]);
+const Popup = observer((props) => {
+  const {
+    dropDownValue,
+    formList,
+    inputFieldValue,
+    setDropDownValue,
+    setFormList,
+    setInputFieldValue,
+  } = store;
 
   const inputValue = (e, id) => {
-    let addVal = [...inputField];
+    let addVal = [...inputFieldValue];
     addVal[id] = e.target.value;
-    setinputField(addVal);
+    setInputFieldValue(addVal);
   };
   const handleSelect = (e, id) => {
-    let selectVal = [...value];
+    let selectVal = [...dropDownValue];
     selectVal[id] = e;
-    setValue(selectVal);
+    setDropDownValue(selectVal);
   };
 
   const increment = () => {
     let incVlaue = {
       id: new Date().getTime().toString(),
     };
-    setForm([...form, incVlaue]);
+    setFormList([...formList, incVlaue]);
   };
-  const decrement = (data, ind) => {
-    setForm((oldData) => {
-      return oldData.filter((newData) => {
-        return newData.id !== form[ind].id;
-      });
-    });
-    value.splice(ind, 1);
-    setValue(value);
-    inputField.splice(ind, 1);
-    setinputField(inputField);
+  const decrement = (ind) => {
+    formList.splice(ind, 1);
+    setFormList([...formList]);
+    dropDownValue.splice(ind, 1);
+    setDropDownValue(dropDownValue);
+    inputFieldValue.splice(ind, 1);
+    setInputFieldValue(inputFieldValue);
   };
 
   return (
@@ -67,7 +71,7 @@ const Popup = (props) => {
                   </Tab>
                 </TabList>
                 <TabPanel>
-                  {form.map((data, ind) => {
+                  {formList.map((data, ind) => {
                     return (
                       <form
                         key={ind}
@@ -79,7 +83,7 @@ const Popup = (props) => {
                           </label>
                           <DropdownButton
                             className="languageDropdown"
-                            title={value[ind] || "English"}
+                            title={dropDownValue[ind] || "English"}
                             onSelect={(e) => handleSelect(e, ind)}
                           >
                             <Dropdown.Item eventKey="English">
@@ -98,14 +102,14 @@ const Popup = (props) => {
                           <input
                             onChange={(e) => inputValue(e, ind)}
                             type="input"
-                            value={inputField[ind] || ""}
+                            value={inputFieldValue[ind] || ""}
                             className="form-control"
                             placeholder="Enter Name"
                           ></input>
                         </div>
-                        {form.length > 1 ? (
+                        {formList.length > 1 ? (
                           <DeleteForeverIcon
-                            onClick={() => decrement(data, ind)}
+                            onClick={() => decrement(ind)}
                             className="deleteIcon"
                           ></DeleteForeverIcon>
                         ) : (
@@ -114,12 +118,7 @@ const Popup = (props) => {
                       </form>
                     );
                   })}
-                  <Button
-                    className="addLanguage"
-                    onClick={() => {
-                      increment();
-                    }}
-                  >
+                  <Button className="addLanguage" onClick={increment}>
                     <img className="icon" src={plus} alt="" /> Add Language
                   </Button>
                 </TabPanel>
@@ -176,7 +175,7 @@ const Popup = (props) => {
                 <Button
                   className="createButton"
                   onClick={props.addCard}
-                  disabled={props.inputField === ""}
+                  disabled={inputFieldValue === ""}
                 >
                   <AddCircleOutlineIcon className="icon"></AddCircleOutlineIcon>{" "}
                   Create
@@ -191,6 +190,6 @@ const Popup = (props) => {
       )}
     </div>
   );
-};
+});
 
 export default Popup;

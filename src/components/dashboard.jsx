@@ -4,8 +4,9 @@ import user from "../assets/images/user.png";
 import Dropdown from "react-bootstrap/Dropdown";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
+import {observer} from "mobx-react"
 
-const Dashboard = (props) => {
+const Dashboard = observer((props) => {
   return (
     <div key={props.ind} className="cards">
       <div className="cardTop">
@@ -47,6 +48,7 @@ const Dashboard = (props) => {
       </div>
     </div>
   );
-};
+})
 
 export default Dashboard;
+  
